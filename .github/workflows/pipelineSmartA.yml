@@ -1,0 +1,21 @@
+name: pipelineSA
+
+on: [push]
+
+jobs: 
+  build: 
+  
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+      name: check out project
+    - name: Run a on-line script
+      run: echo Hello SmartArm
+    - name: Run a multi-line script
+      run: |
+        echo SmartArm,
+        time
+        touch SmartArm.txt
+        ls -la
+        echo test, and deploy your project.
